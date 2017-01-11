@@ -1,0 +1,44 @@
+<div class="dropdown-container" ng-class="{ show: listVisible }">
+
+	<div class="dropdown-display" ng-click="show();" ng-style="optionSelectedStyle">
+		<span ng-if="!isPlaceholder">{{display}}</span>
+		<span class="placeholder" ng-if="isPlaceholder">{{placeholder}}</span>
+		<i class="fa fa-angle-down"></i>
+	</div>
+
+	<div class="dropdown-list">
+		<span>
+			<input type="text" placeholder="search" ng-model=searchText>
+		</span>
+		<div>
+			<div ng-repeat="item in items | filter: search" ng-mouseout="hideTooltip(item)"
+			ng-mouseenter="showTooltip(item)" ng-click="showSelected(item)">
+				<div>
+					<span>{{item.driver.name}}/{{item.vehicle.number}}</span>
+					<span class=""></span>
+				</div>
+				<i class="fa fa-check"></i>
+			</div>
+		</div>
+		<div class="tooltip">
+			<div class="tooltiptext" ng-style="tooltipTextStyle" ng-model="tooltipItem">
+				<div ng-show="tooltipItem.driver" class="tooltip_content">
+					<span>DRIVER</span>
+					<div>
+						<img ng-src="{{tooltipItem.driver.img}}" width=70 height="70">
+						<p>{{tooltipItem.driver.name}}</p>
+						<p>{{tooltipItem.driver.contact}}</p>
+					</div>
+				</div>
+				<div ng-show="tooltipItem.vehicle" class="tooltip_content" style="float:right;">
+					<span>VEHICLE</span>
+					<div>
+						<img ng-src="{{tooltipItem.vehicle.img}}" width=70 height="70">
+						<p>{{tooltipItem.vehile.name}}</p>
+						<p>{{tooltipItem.vehicle.number}}</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>  

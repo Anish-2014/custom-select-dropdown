@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html ng-app="selectDropdown">
+    <head>
+        <title>Select dropdown</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="dropDownTemplate.css" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="controller.js"></script>
+        <script src="directive.js"></script>
+
+    </head>
+    <body ng-controller="dropdownCtrl">
+
+    <dropdown placeholder="Select driver/ Pair vehicle" selected="selectedValue" items="items" objects="objectList"
+              property="propertyList"></dropdown>
+
+    </body>
+</html>
