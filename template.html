@@ -14,7 +14,7 @@
 			<div ng-repeat="item in items | filter: search" ng-mouseout="hideTooltip(item)"
 			ng-mouseenter="showTooltip(item)" ng-click="showSelected(item)">
 				<div>
-					<span>{{item.driver.name}}/{{item.vehicle.number}}</span>
+					<span>{{item[objects[0]][property[0]]}}/{{item[objects[1]][property[1]]}}</span>
 					<span class=""></span>
 				</div>
 				<i class="fa fa-check"></i>
@@ -26,16 +26,16 @@
 					<span>DRIVER</span>
 					<div>
 						<img ng-src="{{tooltipItem.driver.img}}" width=70 height="70">
-						<p>{{tooltipItem.driver.name}}</p>
-						<p>{{tooltipItem.driver.contact}}</p>
+						<p>{{tooltipItem[objects[0]][property[0]]}}</p>
+						<p>{{tooltipItem[objects[0]][property[2]]}}</p>
 					</div>
 				</div>
 				<div ng-show="tooltipItem.vehicle" class="tooltip_content" style="float:right;">
 					<span>VEHICLE</span>
 					<div>
 						<img ng-src="{{tooltipItem.vehicle.img}}" width=70 height="70">
-						<p>{{tooltipItem.vehile.name}}</p>
-						<p>{{tooltipItem.vehicle.number}}</p>
+						<p>{{tooltipItem[objects[1]][property[1]]}}</p>
+						<p>{{tooltipItem[objects[1]][property[1]]}}</p>
 					</div>
 				</div>
 			</div>
