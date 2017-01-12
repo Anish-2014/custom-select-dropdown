@@ -1,4 +1,4 @@
-app.directive("dropdown", function($rootScope) {
+app.directive("dropdown", function() {
 	return {
 		restrict: "E",
 		templateUrl: "template.html",
