@@ -20,7 +20,7 @@ app.controller("dropdownCtrl", function($scope) {
     }];
 
 	$scope.objectList = ['driver', 'vehicle'];
-	$scope.propertyList = ['name', 'number']
+	$scope.propertyList = ['name', 'number', 'contact']
 
 	$scope.selectedValue = "";
 
